@@ -34,6 +34,10 @@ app.get("/weather", (request, response, next) =>
 	}
 });
 
+app.get("*", (request, response) =>
+{
+	response.status(400).send("No valid query");
+});
 
 app.listen(PORT, () =>
 {
