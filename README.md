@@ -1,7 +1,7 @@
-# Project Name
+# City-Explorer-API
 
-**Author**: Your Name Goes Here
-**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+**Author**: Adrian
+**Version**: 1.0.1
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
@@ -20,3 +20,4 @@
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
+![WRRC](https://i.ibb.co/X5qrBPK/back-end-request-response.jpg)
