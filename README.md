@@ -20,4 +20,6 @@
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
-![WRRC](https://i.ibb.co/3M75wLH/image.png)
+![WRRC1](https://i.ibb.co/C72V6XG/whiteboard.png)
+![WRRC2](https://i.ibb.co/X5qrBPK/back-end-request-response.jpg)
+![WRRC3](https://i.ibb.co/3M75wLH/image.png)

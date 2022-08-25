@@ -83,9 +83,17 @@ class Movie
 		this.overview = movie.overview;
 		this.averageVotes = movie.vote_average;
 		this.totalVotes = movie.vote_count;
-		this.imageURL = `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`;
 		this.popularity = movie.popularity;
 		this.releaseDate = movie.release_date;
+
+		if (movie.backdrop_path != null)
+		{
+			this.imageURL = `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`;
+		}
+		else
+		{
+			this.imageURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg";
+		}
 	}
 }
 
