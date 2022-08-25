@@ -43,7 +43,7 @@ class Movie
 			this.imageURL = `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`;
 		} else
 		{
-			this.imageURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg";
+			this.imageURL = "https://i.ibb.co/rkMqdvt/filler.jpg";
 		}
 	}
 }
