@@ -23,3 +23,4 @@
 ![WRRC1](https://i.ibb.co/C72V6XG/whiteboard.png)
 ![WRRC2](https://i.ibb.co/X5qrBPK/back-end-request-response.jpg)
 ![WRRC3](https://i.ibb.co/3M75wLH/image.png)
+![WRRC4](https://i.ibb.co/tMZpV4X/WRRC-Lab-9.png)
