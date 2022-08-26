@@ -1,6 +1,8 @@
 "use strict";
 
 const axios = require("axios");
+const API = require("./api.js");
+
 const weatherBitURL = `https://api.weatherbit.io/v2.0/forecast/daily?key=${process.env.WEATHER_API_KEY}`;
 
 async function getForecasts(request, response, next)
@@ -27,14 +29,14 @@ async function getForecasts(request, response, next)
 	} catch (exception)
 	{
 		next(exception);
-		// response.status(500).send("Error with request");
 	}
 }
 
-class Forecast
+class Forecast extends API
 {
 	constructor(forecastData)
 	{
+		super();
 		let date = forecastData.valid_date;
 		let lowTemp = forecastData.low_temp;
 		let highTemp = forecastData.high_temp;
