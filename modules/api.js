@@ -1,4 +1,4 @@
-class API
+class CacheableAPI
 {
 
 	static #cache = {
@@ -11,13 +11,13 @@ class API
 
 	static searchCache(key)
 	{
-		return API.#cache[key] || false;
+		return CacheableAPI.#cache[key] || false;
 	}
 
 	static addToCache(key, data)
 	{
-		API.#cache[key] = data;
+		CacheableAPI.#cache[key] = data;
 	}
 }
 
-module.exports = API;
+module.exports = CacheableAPI;

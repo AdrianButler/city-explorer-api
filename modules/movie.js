@@ -1,7 +1,7 @@
 "use strict";
 
 const axios = require("axios");
-const API = require("./api.js");
+const cacheableAPI = require("./api.js");
 
 const moviesDBURL = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.MOVIE_API_KEY}`;
 
@@ -50,7 +50,7 @@ async function getMovies(request, response, next)
 	}
 }
 
-class Movie extends API
+class Movie extends cacheableAPI
 {
 	constructor(movie)
 	{
