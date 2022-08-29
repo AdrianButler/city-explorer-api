@@ -1,26 +1,25 @@
 "use strict";
 
 const axios = require("axios");
-const cacheableAPI = require("./api.js");
+const cacheClass = require("./cache.js");
+const cache = new cacheClass();
 
 const moviesDBURL = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.MOVIE_API_KEY}`;
 
 
 async function getMovies(request, response, next)
 {
-
 	const query = request.query.searchQuery;
 	const movieDBQueryURL = `${moviesDBURL}&query=${query}`;
 	try
 	{
 		let movieDBResponse;
-		console.log(movieDBQueryURL);
 
-		let cacheSearch = Movie.searchCache(query);
+		let cacheSearch = cache.searchCache(query);
 		if (cacheSearch && (Date.now() - cacheSearch.timeStamp < 1000 * 60 * 60 * 2))
 		{
 			movieDBResponse = cacheSearch.data;
-			console.log("using cache");
+			console.log("Using Cache");
 		} else
 		{
 
@@ -32,13 +31,13 @@ async function getMovies(request, response, next)
 			});
 
 
-			if (!Movie.searchCache(query))
+			if (!cache.searchCache(query))
 			{
 				let cacheObject = {
 					data: movieDBResponse,
 					timeStamp: Date.now()
 				};
-				Movie.addToCache(query, cacheObject);
+				cache.addToCache(query, cacheObject);
 			}
 
 		}
@@ -50,11 +49,10 @@ async function getMovies(request, response, next)
 	}
 }
 
-class Movie extends cacheableAPI
+class Movie
 {
 	constructor(movie)
 	{
-		super();
 		this.title = movie.title;
 		this.overview = movie.overview;
 		this.averageVotes = movie.vote_average;
